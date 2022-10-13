@@ -1,0 +1,14 @@
+.wrap {
+  margin-top: 16px;
+
+  .tocsWrap {
+    height: calc(100vh - 279px);
+    overflow: auto;
+    border: 1px solid var(--semi-color-border);
+    border-radius: var(--border-radius);
+  }
+
+  .btnWrap {
+    margin-top: 16px;
+  }
+}

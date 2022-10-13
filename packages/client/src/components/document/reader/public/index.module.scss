@@ -1,0 +1,15 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: var(--semi-color-nav-bg);
+
+  .headerWrap {
+    position: sticky;
+  }
+
+  .contentWrap {
+    flex: 1;
+    overflow: hidden;
+  }
+}

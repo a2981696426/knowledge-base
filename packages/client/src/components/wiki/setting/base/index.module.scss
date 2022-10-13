@@ -1,0 +1,15 @@
+.cover {
+  margin-bottom: 12px;
+
+  img {
+    width: 104px;
+    height: 96px;
+    border-radius: 4px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cover {
+    width: 100%;
+  }
+}

@@ -1,0 +1,26 @@
+/* stylelint-disable no-descending-specificity */
+.wrap {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+
+  > header {
+    position: relative;
+    z-index: 110;
+    height: 60px;
+    background-color: var(--semi-color-nav-bg);
+    user-select: none;
+
+    > div {
+      overflow: auto;
+    }
+  }
+
+  > main {
+    height: calc(100% - 60px);
+    overflow: hidden;
+    background-color: var(--semi-color-nav-bg);
+    flex: 1;
+  }
+}

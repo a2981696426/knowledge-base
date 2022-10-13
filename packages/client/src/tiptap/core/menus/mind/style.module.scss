@@ -1,0 +1,13 @@
+.toolbarWrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  padding: 6px 24px;
+  overflow-x: auto;
+  color: #fff;
+  background-color: var(--semi-color-nav-bg);
+  border-bottom: 1px solid var(--semi-color-border);
+  align-items: center;
+}

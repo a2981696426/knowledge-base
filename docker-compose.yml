@@ -1,0 +1,60 @@
+version: '3'
+services:
+  think:
+    build:
+      context: .
+    image: think
+    container_name: think
+    volumes:
+      - ./config:/app/config
+      - ./runtime/static:/app/packages/server/static
+    environment:
+      - TZ=Asia/Shanghai
+    expose:
+      - '5001-5003'
+    ports:
+      - '5001-5003:5001-5003'
+    depends_on:
+      - mysql
+      - redis
+    networks:
+      - think
+  mysql:
+    image: mysql:5.7
+    restart: always
+    container_name: mysql-for-think
+    volumes:
+      - ./runtime/mysql:/var/lib/mysql
+    environment:
+      - TZ=Asia/Shanghai
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=think
+      - MYSQL_USER=think
+      - MYSQL_PASSWORD=think
+    expose:
+      - '3306'
+    ports:
+      - '3306:3306'
+    command:
+      - '--character-set-server=utf8mb4'
+      - '--collation-server=utf8mb4_unicode_ci'
+    networks:
+      - think
+  redis:
+    image: redis:latest
+    restart: always
+    container_name: redis-for-think
+    command: >
+      --requirepass root
+    expose:
+      - '6379'
+    ports:
+      - '6379:6379'
+    volumes:
+      - ./runtime/redis:/data
+    privileged: true
+    networks:
+      - think
+networks:
+  think:
+    driver: bridge

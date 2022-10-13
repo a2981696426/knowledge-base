@@ -1,0 +1,54 @@
+.titleWrap {
+  padding: 8px 16px;
+}
+
+.itemsWrap {
+  max-height: 240px;
+  overflow: auto;
+}
+
+.itemWrap {
+  border-radius: var(--semi-border-radius-small);
+
+  &:hover {
+    color: var(--semi-color-text-0);
+    background-color: var(--semi-color-fill-0);
+  }
+
+  .item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 32px;
+    padding: 4px 16px;
+
+    .leftWrap {
+      display: flex;
+      overflow: hidden;
+      color: var(--semi-color-primary);
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      align-items: center;
+
+      > span {
+        word-break: break-all;
+      }
+
+      svg {
+        fill: var(--semi-color-primary);
+        color: var(--semi-color-primary);
+      }
+
+      > div {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+}
+
+.paginationWrap {
+  display: flex;
+  justify-content: center;
+}

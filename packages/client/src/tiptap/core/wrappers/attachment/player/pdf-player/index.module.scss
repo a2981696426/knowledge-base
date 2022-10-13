@@ -1,0 +1,16 @@
+.playerWrap {
+  width: 100%;
+  height: 65vh;
+
+  :global {
+    .rpv-default-layout__sidebar-header {
+      &:nth-child(n + 2) {
+        display: none;
+      }
+    }
+
+    .rpv-open__input-wrapper {
+      display: none;
+    }
+  }
+}
